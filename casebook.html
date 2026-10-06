@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casebook — Poornima Ramanarayanan</title>
+<meta name="description" content="A growing record of product problems Poornima Ramanarayanan has worked on, and how she approached them.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Casebook — Poornima Ramanarayanan">
+<meta property="og:description" content="Problems I’ve worked on, and how I approached them.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23274E13'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='36' font-weight='700' text-anchor='middle' fill='%23F1F2EC'%3EP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<!--
+  HOW TO ADD TO THE CASEBOOK
+  Easiest: open casebook.html?new in your browser (for example
+  https://username.github.io/casebook.html?new), fill in the form, click "Copy entry",
+  then paste it into the ENTRIES list further down this file, just below the
+  "NEWEST FIRST" line. Save (or commit on GitHub). Done.
+  By hand: copy the TEMPLATE in the ENTRIES section and fill it in.
+-->
+<style>
+:root{
+  --ground:#F1F2EC; --surface:#E6E9DF; --field:#FAFBF7; --ink:#1B2316; --soft:#3E4739; --muted:#525C4C;
+  --rule:#C9CFBF; --dash:#A3AD97; --accent:#274E13; --accent-deep:#1C3A0D; --teal:#1D6B66;
+  --badge-bg:#F1F2EC;
+  --sans:'Schibsted Grotesk','Helvetica Neue',Arial,sans-serif;
+  --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+  --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+[id]{scroll-margin-top:20px}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)} a:hover{color:var(--teal)}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-9999px;top:0}
+.skip:focus{left:16px;top:16px;background:#fff;padding:10px 14px;z-index:10;font-family:var(--sans)}
+.wrap{max-width:1120px;margin:0 auto;padding-left:clamp(20px,5vw,56px);padding-right:clamp(20px,5vw,56px)}
+.site-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:0 28px;padding-top:14px;padding-bottom:14px;border-bottom:1px solid var(--rule)}
+.brand{font-family:var(--sans);font-weight:700;font-size:17px;color:var(--accent);text-decoration:none;padding:12px 0}
+.site-nav{display:flex;flex-wrap:wrap;gap:0 22px}
+.site-nav a{font-family:var(--sans);font-size:15px;font-weight:500;color:var(--ink);text-decoration:none;padding:12px 0}
+.site-nav a:hover{color:var(--accent)}
+.site-nav a[aria-current="page"]{color:var(--accent);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:7px}
+
+.intro{padding-top:clamp(56px,8vw,96px);display:flex;flex-direction:column;gap:20px}
+.kicker{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--accent);margin:0}
+h1{font-family:var(--sans);font-weight:800;font-size:clamp(38px,5.4vw,64px);line-height:1.04;letter-spacing:-.03em;margin:0;max-width:18ch}
+.lede{margin:0;font-size:clamp(18px,1.8vw,20px);line-height:1.6;max-width:58ch}
+
+.toolbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px 24px;margin:56px 0 8px}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filter{min-height:42px;padding:0 14px;border-radius:6px;border:1.5px solid var(--rule);background:transparent;font-family:var(--sans);font-size:14.5px;font-weight:500;color:var(--ink);cursor:pointer}
+.filter:hover{border-color:var(--accent)}
+.filter[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.search{min-height:44px;width:min(320px,100%);padding:0 14px;border-radius:6px;border:1.5px solid var(--rule);background:var(--field);font-family:var(--sans);font-size:15px;color:var(--ink)}
+.search::placeholder{color:#7A8374}
+.count{font-family:var(--sans);font-size:14px;color:var(--muted);margin:16px 0 0}
+
+.entries{margin-top:24px}
+.entry{border-top:1px solid var(--rule)}
+.entry:last-child{border-bottom:1px solid var(--rule)}
+.entry summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr) 34px;gap:8px 40px;padding:28px 0;align-items:start}
+.entry summary::-webkit-details-marker{display:none}
+.entry-meta{display:flex;flex-direction:column;align-items:flex-start;gap:4px;font-family:var(--sans);font-size:14px;color:var(--muted);padding-top:3px}
+.type{font-weight:600;color:var(--accent)}
+.status{font-size:12.5px;font-weight:600;color:var(--teal);border:1.5px dashed var(--teal);border-radius:4px;padding:1px 7px;margin-top:4px}
+.entry-title{font-family:var(--sans);font-weight:700;font-size:clamp(21px,2.2vw,25px);line-height:1.25;margin:0 0 6px;color:var(--ink)}
+.entry summary:hover .entry-title{color:var(--accent)}
+.entry-context{font-family:var(--sans);font-size:15px;line-height:1.45;color:var(--muted)}
+.entry-excerpt{margin:12px 0 0;font-size:16.5px;line-height:1.55;color:var(--soft);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+details[open] .entry-excerpt{display:none}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chip{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--soft);border:1px solid var(--rule);border-radius:4px;padding:3px 8px}
+.toggle{width:34px;height:34px;border-radius:6px;border:1.5px solid var(--rule);display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:700;font-size:18px;color:var(--accent)}
+.toggle::before{content:"+"}
+details[open] .toggle::before{content:"−"}
+.entry summary:hover .toggle{border-color:var(--accent)}
+.entry-body{display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr) 34px;gap:0 40px;padding:4px 0 44px}
+.entry-body > div{grid-column:2}
+.entry-foot{margin:28px 0 0 40px;display:flex;flex-wrap:wrap;gap:10px 24px;font-family:var(--sans);font-size:15px}
+
+.map{margin-left:12px;border-left:1.5px dashed var(--dash);padding-left:28px;display:flex;flex-direction:column;gap:28px}
+.node{display:flex;flex-direction:column;gap:8px}
+.node-head{display:flex;align-items:center;gap:12px;margin-left:-41px}
+.badge{display:inline-flex;align-items:center;justify-content:center;flex:0 0 24px;width:24px;height:24px;border-radius:6px;background:var(--badge-bg);border:1.5px solid currentColor;font-family:var(--sans);font-weight:700;font-size:13px;line-height:1}
+.node-label{font-family:var(--sans);font-weight:600;font-size:15px}
+.node-text p{margin:0 0 12px;font-size:17.5px;line-height:1.65;max-width:64ch}
+.node-text p:last-child{margin-bottom:0}
+.node-text ul{margin:0;padding-left:20px;max-width:62ch}
+.node-text li{font-size:17px;line-height:1.6;margin:0 0 6px}
+.n-q .node-head{color:var(--accent)}
+.n-found .node-head{color:var(--ink)}
+.n-call .node-head{color:var(--accent)}
+.n-call .badge{background:var(--accent);border-color:var(--accent);color:#fff}
+.n-out .node-head{color:var(--accent)}
+.n-open .node-head{color:var(--teal)}
+.n-open .badge{border-style:dashed}
+
+.notice{margin-top:32px;padding:20px 22px;border-radius:8px;background:#F6E6C3;color:#4A2E00;font-family:var(--sans);font-size:15.5px;line-height:1.5}
+.empty{margin-top:32px;font-family:var(--sans);font-size:16px;color:var(--muted)}
+
+.site-foot{margin-top:clamp(80px,10vw,120px);padding-top:24px;padding-bottom:40px;border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;font-family:var(--sans);font-size:14px;color:var(--muted)}
+
+/* composer (casebook.html?new) */
+.composer{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px 56px;margin-top:48px;align-items:start}
+.form{display:flex;flex-direction:column;gap:18px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--ink)}
+.hint{font-family:var(--sans);font-size:13px;line-height:1.4;color:var(--muted)}
+.field input,.field select,.field textarea{width:100%;font:inherit;font-family:var(--sans);font-size:15.5px;color:var(--ink);background:var(--field);border:1.5px solid var(--rule);border-radius:6px;padding:10px 12px}
+.field textarea{font-family:var(--serif);font-size:16.5px;line-height:1.55;min-height:110px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px rgba(39,78,19,.15)}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}
+.check{display:flex;align-items:center;gap:10px;font-family:var(--sans);font-size:15px}
+.check input{width:20px;height:20px;accent-color:var(--accent)}
+.side{position:sticky;top:20px;display:flex;flex-direction:column;gap:20px}
+.panel-title{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--muted);margin:0}
+.preview{background:var(--surface);border-radius:10px;padding:4px 24px;--badge-bg:var(--surface)}
+.preview .entry{border:0}
+.preview .entry summary,.preview .entry-body{grid-template-columns:minmax(0,1fr) 34px}
+.preview .entry-meta{flex-direction:row;flex-wrap:wrap;gap:4px 12px;grid-column:1 / -1}
+.preview .entry-body > div{grid-column:1}
+.code{width:100%;min-height:240px;font-family:var(--mono);font-size:13px;line-height:1.5;color:var(--ink);background:var(--field);border:1.5px solid var(--rule);border-radius:6px;padding:12px;resize:vertical;white-space:pre}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 20px;border-radius:6px;font-family:var(--sans);font-size:15px;font-weight:600;text-decoration:none;border:1.5px solid var(--accent);color:#fff;background:var(--accent);cursor:pointer}
+.btn:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.copied{font-family:var(--sans);font-size:14px;color:var(--teal);min-height:20px}
+.steps-how{margin:0;padding-left:20px;font-family:var(--sans);font-size:15px;line-height:1.55;color:var(--soft)}
+.steps-how li{margin-bottom:6px}
+code{font-family:var(--mono);font-size:.9em;background:var(--surface);padding:1px 5px;border-radius:4px}
+
+@media (max-width:860px){
+  .entry summary{grid-template-columns:minmax(0,1fr) 34px;padding:24px 0}
+  .entry-meta{flex-direction:row;flex-wrap:wrap;align-items:center;gap:4px 12px;grid-column:1 / -1}
+  .status{margin-top:0}
+  .entry-body{grid-template-columns:minmax(0,1fr)}
+  .entry-body > div{grid-column:1}
+  .entry-foot{margin-left:0}
+  .composer{grid-template-columns:1fr}
+  .side{position:static}
+}
+@media (max-width:520px){.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="wrap site-head">
+  <a class="brand" href="index.html">Poornima Ramanarayanan</a>
+  <nav class="site-nav" aria-label="Main">
+    <a href="index.html#capabilities">Capabilities</a>
+    <a href="index.html#work">Case studies</a>
+    <a href="index.html#approach">Approach</a>
+    <a href="index.html#experience">Experience</a>
+    <a href="casebook.html" aria-current="page">Casebook</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="main" class="wrap">
+
+<!-- ============================ BROWSE VIEW ============================ -->
+<div id="browse">
+  <section class="intro" aria-labelledby="cb-title">
+    <p class="kicker">Casebook</p>
+    <h1 id="cb-title">Problems I’ve worked on, and how I approached them.</h1>
+    <p class="lede">A living record, from full case studies to shorter problem statements and teardowns. Each one follows the same map: the problem, what I found, how I approached it, and what’s still open.</p>
+  </section>
+  <div class="toolbar">
+    <div class="filters" id="filters" role="group" aria-label="Filter by type"></div>
+    <label style="display:contents"><span class="skip">Search the casebook</span>
+      <input class="search" id="search" type="search" placeholder="Search by keyword or skill" autocomplete="off"></label>
+  </div>
+  <p class="count" id="count" aria-live="polite"></p>
+  <div class="entries" id="entries"></div>
+</div>
+
+<!-- ======================= COMPOSER (casebook.html?new) ======================= -->
+<div id="composer" hidden>
+  <section class="intro">
+    <p class="kicker">Casebook · new entry</p>
+    <h1>Write a new entry.</h1>
+    <p class="lede">Fill in what you have; empty fields are left out. Then copy the entry and paste it into <code>casebook.html</code>. This page only runs in your browser and saves nothing.</p>
+  </section>
+  <div class="composer">
+    <form class="form" id="form" autocomplete="off" onsubmit="return false">
+      <div class="field"><label for="f-title">Title</label><input id="f-title" placeholder="Short and specific, e.g. The CRM request that was really a billing problem"></div>
+      <div class="two">
+        <div class="field"><label for="f-type">Type</label>
+          <select id="f-type"><option>Problem statement</option><option>Case study</option><option>Teardown</option></select></div>
+        <div class="field"><label for="f-date">Date</label><input id="f-date" placeholder="Oct 2026"></div>
+      </div>
+      <div class="two">
+        <div class="field"><label for="f-status">Status <span class="hint">(optional)</span></label><input id="f-status" placeholder="In progress"></div>
+        <div class="field"><label for="f-tags">Skills shown</label><input id="f-tags" placeholder="Problem framing, Metrics"><span class="hint">Separate with commas.</span></div>
+      </div>
+      <div class="field"><label for="f-context">Context</label><input id="f-context" placeholder="Where this happened, in a few words"></div>
+      <div class="field"><label for="f-problem">The problem</label><textarea id="f-problem" placeholder="What was asked, or what was broken?"></textarea></div>
+      <div class="field"><label for="f-found">What I found <span class="hint">(optional)</span></label><textarea id="f-found" placeholder="What did you learn when you looked closer?"></textarea></div>
+      <div class="field"><label for="f-approach">How I approached it</label><textarea id="f-approach" placeholder="The approach and the call you made."></textarea><span class="hint">A blank line starts a new paragraph. Lines starting with “- ” become bullet points.</span></div>
+      <div class="field"><label for="f-outcome">Where it landed <span class="hint">(optional)</span></label><textarea id="f-outcome" placeholder="Results, decisions taken, what changed."></textarea></div>
+      <div class="field"><label for="f-open">Still open <span class="hint">(optional)</span></label><textarea id="f-open" placeholder="What’s unresolved, and who owns it?"></textarea></div>
+      <div class="field"><label for="f-link">Link <span class="hint">(optional)</span></label><input id="f-link" placeholder="https://… or a PDF uploaded next to this page, e.g. my-case.pdf"></div>
+      <label class="check"><input type="checkbox" id="f-draft"> Draft: keep it hidden from the public page for now</label>
+    </form>
+    <div class="side">
+      <p class="panel-title">Preview</p>
+      <div class="preview" id="preview"></div>
+      <p class="panel-title">Your entry</p>
+      <textarea class="code" id="code" readonly aria-label="Generated entry"></textarea>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px"><button class="btn" type="button" id="copy">Copy entry</button><span class="copied" id="copied" aria-live="polite"></span></div>
+      <ol class="steps-how">
+        <li>Open <code>casebook.html</code> (on GitHub: open the file, then the pencil icon).</li>
+        <li>Find the line <code>NEWEST FIRST</code> in the ENTRIES list.</li>
+        <li>Paste your entry on the line directly below it, then save or commit.</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer class="wrap site-foot">
+  <span><a href="index.html">← Back to portfolio</a></span>
+  <span>Case details are anonymised. No customer, patient or confidential figures are shown.</span>
+</footer>
+
+<script>
+/* =========================================================================
+   CASEBOOK ENTRIES  (the only part of this file you need to edit)
+
+   Each entry sits between { and }, and every entry ends with a comma.
+   Text goes between backticks (`like this`). Apostrophes and quotes are fine;
+   just don't type a backtick inside the text.
+
+   Easiest way to add one: open casebook.html?new, fill in the form, copy, paste.
+
+   TEMPLATE (copy from the { to the }, including the comma at the end)
+   {
+     title: `Short, specific title`,
+     type: `Problem statement`,          // Case study | Problem statement | Teardown
+     date: `Oct 2026`,
+     status: `In progress`,              // optional
+     context: `Where this happened, in a few words`,
+     tags: [`Problem framing`, `Metrics`],
+     problem: `What was asked, or what was broken.`,
+     found: `What you learned when you looked closer.`,           // optional
+     approach: `How you approached it and the call you made.`,
+     outcome: `Where it landed.`,                                  // optional
+     open: `What's still unresolved.`,                             // optional
+     link: `https://...`,                                          // optional
+     draft: true,                        // optional: hides the entry until you delete this line
+   },
+
+   Formatting: a blank line starts a new paragraph; lines starting "- " become bullets.
+   ========================================================================= */
+window.ENTRIES = [
+  // ↓↓ NEWEST FIRST: paste new entries on the line below this one ↓↓
+
+  {
+    title: `Routing hospital data to the right customer`,
+    type: `Problem statement`,
+    date: `2026`,
+    status: `In progress`,
+    context: `Imaging integration for a multi-site hospital group`,
+    tags: [`Interoperability`, `Data integrity`, `Risk thinking`],
+    problem: `A hospital group with several sites shares one central imaging archive, so our receiving node had to be centralised too. Incoming studies were being matched to the right customer account using a free-text institution field.`,
+    found: `That field is set by each site, can change without notice, and is sometimes missing altogether. It’s one example of a wider pattern in hospital deployments: inconsistent metadata, restricted networks and on-premise constraints can block adoption before a clinician ever sees value.`,
+    approach: `Stress-test the routing assumption before scaling it.
+      - Define what happens when the field is missing or changes
+      - Make routing deterministic at intake, and fail closed (hold for review rather than guess) whenever a match is ambiguous
+      - Identify scan types from the standard’s authoritative identifier, not loosely used tags
+      - Keep de-duplication and series selection as separate steps`,
+    open: `The fallback rule for when the institution field is missing or changes.`,
+  },
+
+  {
+    title: `From a chat channel to a routed case pipeline`,
+    type: `Case study`,
+    date: `2026`,
+    context: `Support operations`,
+    tags: [`Operations design`, `Triage`, `Instrumentation`],
+    problem: `Customer complaints and processing failures were all posted into one shared chat channel. No one could say which cases were still open, who owned each one, or which problems kept coming back.`,
+    found: `I classified six weeks of threads, more than 100 cases, into ten failure types, each mapped to the team responsible for closing it. Two patterns emerged that the channel had hidden. The most common failure clustered in one workflow at a handful of sites, making it a targeted fix rather than a platform-wide one. And a status message was telling customers a job had failed when the part they needed had succeeded: a software and messaging fix, not a model problem.`,
+    approach: `Moved intake to a per-case board keyed on a non-identifying case ID, so no patient data enters the tracker. Support assigns severity and owns follow-up, failure-type tags make recurrence countable, and closing a case asks for a link to whatever resolved it. The chat channel stays for coordination; the board is the record.`,
+    outcome: `With structured defect tracking in place, the product failure rate fell by 40% in two months.`,
+    open: `The close rule is a soft gate for now; enforcing it needs a workflow plugin. The next step is capturing a reason code at intake, so pattern data builds itself instead of needing a look back.`,
+  },
+
+  {
+    title: `The CRM request that was really a billing problem`,
+    type: `Case study`,
+    date: `2026`,
+    context: `Commercial operations and finance`,
+    tags: [`Problem framing`, `Buy vs build`, `Privacy by design`],
+    problem: `Evaluate a CRM for the marketing team.`,
+    found: `The real pain sat downstream. Finance reconciled usage-based invoices by hand each month and work orders lived in scattered files, so the CRM request was really a proxy for connecting commercial records to billing. Splitting the problem into three layers (metering what was used, reconciling what’s invoiceable, and a billing system of record) showed that only the last was a buy-or-build decision. The same review surfaced a month-end habit of treating every case as billable and correcting later, a revenue-integrity gap no vendor would fix on its own.`,
+    approach: `Leadership approved Zoho as the billing system of record, while everything clinical or patient-facing stays in our product. For usage-based invoices, the design uses opaque tokens so patient identifiers never enter the billing tool. Three of the five planned dashboards had no dependency on the vendor and could move ahead straight away, and I pushed for data-sensitivity tagging to be settled before the database schema locked.`,
+    open: `Finance still works inside the billing tool directly. The longer-term aim is to surface it through our own interface, so closing the month doesn’t mean switching systems.`,
+  },
+
+  {
+    title: `Choosing an analytics stack for sensitive data`,
+    type: `Problem statement`,
+    date: `2026`,
+    context: `Product analytics and observability`,
+    tags: [`Metrics`, `Privacy`, `Decision brief`],
+    problem: `Choose product analytics and observability tooling for a platform whose core screens display patient imaging.`,
+    found: `On paper, PostHog, Mixpanel and Amplitude looked close. The deciding risk wasn’t in any feature matrix: session replay in the monitoring stack couldn’t mask sensitive data drawn inside a 3D canvas, which is exactly where the core viewer renders. Privacy risk lives in how events and replays are designed, not only in where data is hosted.`,
+    approach: `Wrote a two-page decision brief and recommended PostHog, with explicit conditions on what it may capture.`,
+  },
+
+  {
+    title: `Three use cases, one messaging channel`,
+    type: `Problem statement`,
+    date: `2026`,
+    context: `WhatsApp Business integration`,
+    tags: [`Scoping`, `Problem framing`],
+    problem: `A brief proposed using WhatsApp for three things at once: urgent alerts to surgeons, interactive selection of imaging outputs, and a marketing channel.`,
+    found: `Interactive selection depended on viewing scans, which the channel can’t carry. Clinical alerts and marketing opt-outs pulled in opposite directions, the brief had no success metrics, and everything depended on a verified surgeon phone registry that didn’t exist yet.`,
+    approach: `Recommended validating the remaining use cases with clinical partners before any engineering commitment, and treating the phone registry as a phase-zero blocker.`,
+  },
+
+  {
+    title: `Ledgerline: post-sales operations for a B2B fintech`,
+    type: `Teardown`,
+    date: `2026`,
+    status: `In progress`,
+    context: `Self-initiated project in a fictional B2B fintech company`,
+    tags: [`Workflow automation`, `Customer health`, `Backlog`],
+    problem: `Three connected mini-projects: support-ticket routing, a post-sales customer health dashboard, and a prioritised backlog.`,
+    approach: `Add your approach here when it's ready, then delete the draft line below.`,
+    draft: true,
+  },
+
+];
+</script>
+
+<script>
+(function () {
+  "use strict";
+  var FIELDS = [
+    ["problem", "Q", "The problem", "n-q"],
+    ["found", "+", "What I found", "n-found"],
+    ["approach", "★", "How I approached it", "n-call"],
+    ["outcome", "→", "Where it landed", "n-out"],
+    ["open", "?", "Still open", "n-open"]
+  ];
+  var TYPE_ORDER = ["Case study", "Problem statement", "Teardown"];
+
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function fmt(text) {
+    var out = [], para = [], list = [];
+    function flushP() { if (para.length) { out.push("<p>" + esc(para.join(" ")) + "</p>"); para = []; } }
+    function flushL() { if (list.length) { out.push("<ul>" + list.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>"); list = []; } }
+    String(text).split("\n").forEach(function (raw) {
+      var line = raw.trim();
+      if (!line) { flushP(); flushL(); return; }
+      var m = line.match(/^[-•*]\s+(.*)$/);
+      if (m) { flushP(); list.push(m[1]); } else { flushL(); para.push(line); }
+    });
+    flushP(); flushL();
+    return out.join("");
+  }
+  function plain(text) { return String(text || "").replace(/\s+/g, " ").replace(/(^|\s)[-•*]\s+/g, "$1").trim(); }
+  function slugify(s) {
+    return String(s).toLowerCase().replace(/[’']/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "entry";
+  }
+  function safeLink(url) {
+    url = String(url || "").trim();
+    if (!url) return "";
+    if (/^(https?:|mailto:)/i.test(url) || /^[\w./#-]+$/.test(url)) return url;
+    return "";
+  }
+  function isText(v) { return typeof v === "string" && v.trim() !== ""; }
+
+  function entryHTML(e, id, open) {
+    var meta = '<div class="entry-meta"><span class="type">' + esc(e.type || "Note") + "</span>" +
+      (isText(e.date) ? "<span>" + esc(e.date) + "</span>" : "") +
+      (isText(e.status) ? '<span class="status">' + esc(e.status) + "</span>" : "") + "</div>";
+    var tags = Array.isArray(e.tags) && e.tags.length
+      ? '<div class="chips">' + e.tags.filter(isText).map(function (t) { return '<span class="chip">' + esc(t) + "</span>"; }).join("") + "</div>" : "";
+    var main = '<div><h2 class="entry-title">' + esc(e.title || "Untitled") + "</h2>" +
+      (isText(e.context) ? '<div class="entry-context">' + esc(e.context) + "</div>" : "") +
+      (isText(e.problem) ? '<p class="entry-excerpt">' + esc(plain(e.problem)) + "</p>" : "") + tags + "</div>";
+    var nodes = FIELDS.filter(function (f) { return isText(e[f[0]]); }).map(function (f) {
+      return '<div class="node ' + f[3] + '"><div class="node-head"><span class="badge" aria-hidden="true">' + f[1] +
+        '</span><span class="node-label">' + f[2] + '</span></div><div class="node-text">' + fmt(e[f[0]]) + "</div></div>";
+    }).join("");
+    var link = safeLink(e.link);
+    var foot = '<div class="entry-foot">' + (link ? '<a href="' + esc(link) + '">Read more →</a>' : "") +
+      (id !== "preview" ? '<a href="#' + esc(id) + '">Link to this entry</a>' : "") + "</div>";
+    return '<details class="entry" id="' + esc(id) + '"' + (open ? " open" : "") + "><summary>" + meta + main +
+      '<span class="toggle" aria-hidden="true"></span></summary><div class="entry-body"><div><div class="map">' +
+      nodes + "</div>" + foot + "</div></div></details>";
+  }
+
+  /* ---------------- composer mode ---------------- */
+  if (new URLSearchParams(location.search).has("new")) {
+    document.getElementById("browse").hidden = true;
+    document.getElementById("composer").hidden = false;
+    document.title = "New casebook entry";
+    var ids = ["title", "type", "date", "status", "context", "tags", "problem", "found", "approach", "outcome", "open", "link"];
+    function lit(s) { return "`" + String(s).replace(/\\/g, "\\\\").replace(/`/g, "\\`").replace(/\$\{/g, "\\${") + "`"; }
+    function read() {
+      var e = {};
+      ids.forEach(function (k) { e[k] = document.getElementById("f-" + k).value.trim(); });
+      e.tags = e.tags ? e.tags.split(",").map(function (t) { return t.trim(); }).filter(Boolean) : [];
+      e.draft = document.getElementById("f-draft").checked;
+      return e;
+    }
+    function code(e) {
+      var L = ["  {"];
+      ["title", "type", "date", "status", "context"].forEach(function (k) { if (e[k]) L.push("    " + k + ": " + lit(e[k]) + ","); });
+      if (e.tags.length) L.push("    tags: [" + e.tags.map(lit).join(", ") + "],");
+      ["problem", "found", "approach", "outcome", "open", "link"].forEach(function (k) { if (e[k]) L.push("    " + k + ": " + lit(e[k]) + ","); });
+      if (e.draft) L.push("    draft: true,");
+      L.push("  },");
+      return L.join("\n");
+    }
+    function update() {
+      var e = read();
+      document.getElementById("preview").innerHTML = entryHTML(e, "preview", true);
+      document.getElementById("code").value = code(e);
+      document.getElementById("copied").textContent = "";
+    }
+    document.getElementById("form").addEventListener("input", update);
+    document.getElementById("copy").addEventListener("click", function () {
+      var e = read(), out = document.getElementById("copied"), box = document.getElementById("code");
+      if (!e.title || !e.problem) { out.textContent = "Add at least a title and the problem first."; return; }
+      function done() { out.textContent = "Copied. Now paste it below the NEWEST FIRST line."; }
+      function fallback() { box.focus(); box.select(); try { document.execCommand("copy"); done(); } catch (err) { out.textContent = "Select the text above and copy it manually."; } }
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(box.value).then(done, fallback); else fallback();
+    });
+    update();
+    return;
+  }
+
+  /* ---------------- browse mode ---------------- */
+  var list = document.getElementById("entries");
+  if (!Array.isArray(window.ENTRIES)) {
+    list.innerHTML = '<div class="notice">The casebook couldn’t load its entries. This is almost always a small typo in the most recently added entry: a missing comma after its closing <code>}</code>, or a backtick inside the text. Check that entry in <code>casebook.html</code> and save again.</div>';
+    return;
+  }
+  var used = {};
+  var entries = window.ENTRIES.filter(function (e) { return e && typeof e === "object" && !e.draft && isText(e.title); })
+    .map(function (e) {
+      var id = slugify(e.title), n = 2;
+      while (used[id]) { id = slugify(e.title) + "-" + n++; }
+      used[id] = true;
+      return { e: e, id: id, hay: [e.title, e.type, e.context, (e.tags || []).join(" "), e.problem, e.found, e.approach, e.outcome, e.open].filter(isText).join(" ").toLowerCase() };
+    });
+
+  var types = [];
+  TYPE_ORDER.concat(entries.map(function (x) { return x.e.type || "Note"; })).forEach(function (t) {
+    if (types.indexOf(t) === -1 && entries.some(function (x) { return (x.e.type || "Note") === t; })) types.push(t);
+  });
+  var state = { type: "All", q: "" };
+  var filters = document.getElementById("filters");
+  function renderFilters() {
+    filters.innerHTML = ["All"].concat(types).map(function (t) {
+      var n = t === "All" ? entries.length : entries.filter(function (x) { return (x.e.type || "Note") === t; }).length;
+      return '<button type="button" class="filter" data-type="' + esc(t) + '" aria-pressed="' + (state.type === t) + '">' + esc(t) + " (" + n + ")</button>";
+    }).join("");
+  }
+  function render() {
+    var q = state.q.toLowerCase();
+    var shown = entries.filter(function (x) {
+      return (state.type === "All" || (x.e.type || "Note") === state.type) && (!q || x.hay.indexOf(q) !== -1);
+    });
+    list.innerHTML = shown.length ? shown.map(function (x) { return entryHTML(x.e, x.id, false); }).join("")
+      : '<p class="empty">Nothing matches that yet.</p>';
+    document.getElementById("count").textContent = "Showing " + shown.length + " of " + entries.length + (entries.length === 1 ? " entry" : " entries");
+  }
+  filters.addEventListener("click", function (ev) {
+    var b = ev.target.closest(".filter"); if (!b) return;
+    state.type = b.getAttribute("data-type"); renderFilters(); render();
+  });
+  document.getElementById("search").addEventListener("input", function (ev) { state.q = ev.target.value.trim(); render(); });
+  function openFromHash() {
+    var id = decodeURIComponent(location.hash.slice(1)); if (!id) return;
+    var el = document.getElementById(id);
+    if (!el && entries.some(function (x) { return x.id === id; })) {
+      state.type = "All"; state.q = ""; document.getElementById("search").value = ""; renderFilters(); render(); el = document.getElementById(id);
+    }
+    if (el && el.tagName === "DETAILS") { el.open = true; el.scrollIntoView(); }
+  }
+  window.addEventListener("hashchange", openFromHash);
+  renderFilters(); render(); openFromHash();
+})();
+</script>
+</body>
+</html>

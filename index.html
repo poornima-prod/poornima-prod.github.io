@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poornima Ramanarayanan — Product Manager</title>
+<meta name="description" content="Portfolio of Poornima Ramanarayanan, a product manager who turns ambiguous problems into products that work in the real world.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Poornima Ramanarayanan — Product Manager">
+<meta property="og:description" content="I turn ambiguous problems into products that work in the real world.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23274E13'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='36' font-weight='700' text-anchor='middle' fill='%23F1F2EC'%3EP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<!--
+  HOW TO EDIT THIS PAGE
+  - Every visible sentence is plain text below. Find it (Ctrl/Cmd+F), retype it, save.
+  - Colours live in the :root block at the top of the <style> section.
+  - To add case studies or problem statements, use casebook.html (see the note at the top of that file).
+-->
+<style>
+:root{
+  --ground:#F1F2EC; --surface:#E6E9DF; --ink:#1B2316; --soft:#3E4739; --muted:#525C4C;
+  --rule:#C9CFBF; --dash:#A3AD97; --accent:#274E13; --accent-deep:#1C3A0D; --teal:#1D6B66;
+  --band-text:#F1F2EC; --band-muted:#D2DDC8; --todo-bg:#F6E6C3; --todo-ink:#6E4400;
+  --badge-bg:#F1F2EC;
+  --sans:'Schibsted Grotesk','Helvetica Neue',Arial,sans-serif;
+  --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+[id]{scroll-margin-top:20px}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)} a:hover{color:var(--teal)}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-9999px;top:0}
+.skip:focus{left:16px;top:16px;background:#fff;padding:10px 14px;z-index:10;font-family:var(--sans)}
+.wrap{max-width:1120px;margin:0 auto;padding-left:clamp(20px,5vw,56px);padding-right:clamp(20px,5vw,56px)}
+
+/* header */
+.site-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:0 28px;padding-top:14px;padding-bottom:14px;border-bottom:1px solid var(--rule)}
+.brand{font-family:var(--sans);font-weight:700;font-size:17px;color:var(--accent);text-decoration:none;padding:12px 0}
+.site-nav{display:flex;flex-wrap:wrap;gap:0 22px}
+.site-nav a{font-family:var(--sans);font-size:15px;font-weight:500;color:var(--ink);text-decoration:none;padding:12px 0}
+.site-nav a:hover{color:var(--accent)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,.85fr);gap:clamp(36px,5vw,72px);align-items:center;padding-top:clamp(56px,8vw,104px)}
+.role{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--accent);margin:0 0 20px}
+h1{font-family:var(--sans);font-weight:800;font-size:clamp(40px,5.3vw,66px);line-height:1.04;letter-spacing:-.03em;margin:0 0 26px;max-width:16ch}
+h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:clamp(18px,1.8vw,20px);line-height:1.6;max-width:56ch;margin:0}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border-radius:6px;font-family:var(--sans);font-size:15px;font-weight:600;text-decoration:none;border:1.5px solid var(--accent);color:var(--accent);background:transparent}
+.btn:hover{background:var(--accent);color:#fff}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff}
+.hero-map{background:var(--surface);border-radius:10px;padding:28px 28px 26px;--badge-bg:var(--surface)}
+.hero-map-label{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--muted);margin:0 0 24px}
+.hero-map-foot{font-family:var(--sans);font-size:13.5px;line-height:1.45;color:var(--muted);margin:24px 0 0}
+
+/* decision map */
+.map{margin-left:12px;border-left:1.5px dashed var(--dash);padding-left:28px;display:flex;flex-direction:column;gap:28px}
+.node{display:flex;flex-direction:column;gap:8px}
+.node-head{display:flex;align-items:center;gap:12px;margin-left:-41px}
+.badge{display:inline-flex;align-items:center;justify-content:center;flex:0 0 24px;width:24px;height:24px;border-radius:6px;background:var(--badge-bg);border:1.5px solid currentColor;font-family:var(--sans);font-weight:700;font-size:13px;line-height:1}
+.node-label{font-family:var(--sans);font-weight:600;font-size:15px}
+.node p{margin:0;font-size:17.5px;line-height:1.65;color:var(--ink);max-width:64ch}
+.n-q .node-head{color:var(--accent)}
+.n-found .node-head{color:var(--ink)}
+.n-call .node-head{color:var(--accent)}
+.n-call .badge{background:var(--accent);border-color:var(--accent);color:#fff}
+.n-open .node-head{color:var(--teal)}
+.n-open .badge{border-style:dashed}
+.map.compact{gap:20px}
+.map.compact p{font-family:var(--sans);font-size:15px;line-height:1.45;color:var(--soft)}
+
+/* section heads */
+.section{padding-top:clamp(80px,11vw,136px)}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px 56px;margin-bottom:48px}
+.kicker{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--accent);margin:0 0 10px}
+.head h2{font-family:var(--sans);font-weight:700;font-size:clamp(28px,3.6vw,42px);line-height:1.1;letter-spacing:-.02em;margin:0;max-width:20ch}
+.head p{margin:0;max-width:46ch;font-size:17px;line-height:1.6;color:var(--muted)}
+
+/* capabilities */
+.caps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px 40px}
+.cap{border-top:1px solid var(--rule);padding-top:18px;display:flex;flex-direction:column;gap:10px}
+.num{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--accent)}
+.cap h3{font-family:var(--sans);font-weight:700;font-size:20px;line-height:1.25;margin:0}
+.cap > p{margin:0;font-size:16.5px;line-height:1.55}
+.practice{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+.practice-label{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--muted)}
+.proof{display:flex;gap:10px;align-items:baseline;font-family:var(--sans);font-size:15px;line-height:1.5;color:var(--soft);margin:0}
+.proof::before{content:"+";font-weight:700;color:var(--accent);flex:0 0 auto}
+.ai-strip{margin-top:56px;display:grid;grid-template-columns:minmax(0,240px) minmax(0,1fr);gap:10px 40px;padding:26px 28px;background:var(--surface);border-radius:10px}
+.ai-strip h3{font-family:var(--sans);font-weight:700;font-size:20px;line-height:1.25;margin:0}
+.ai-strip p{margin:0;font-size:16.5px;line-height:1.6}
+
+/* case studies */
+.case{border-top:1px solid var(--rule);padding-top:44px;display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.6fr);gap:28px 56px}
+.case + .case{margin-top:72px}
+.case-side{position:sticky;top:24px;align-self:start}
+.case-side h3{font-family:var(--sans);font-weight:700;font-size:clamp(24px,2.6vw,30px);line-height:1.2;letter-spacing:-.01em;margin:6px 0 10px}
+.case-context{font-family:var(--sans);font-size:15px;line-height:1.45;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.chip{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--soft);border:1px solid var(--rule);border-radius:4px;padding:3px 8px}
+.case-link{margin:28px 0 0 40px}
+.more{margin-top:56px;font-family:var(--sans);font-size:16px}
+
+/* approach */
+.steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:44px 56px}
+.step{border-top:1px solid var(--rule);padding-top:18px;display:flex;flex-direction:column;gap:10px}
+.step h3{font-family:var(--sans);font-weight:700;font-size:20px;line-height:1.25;margin:0}
+.step > p{margin:0;font-size:16.5px;line-height:1.55}
+.step .practice{margin-top:4px}
+.principle{margin-top:64px;background:var(--accent);color:#fff;border-radius:10px;padding:clamp(28px,4vw,44px);display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);gap:14px 40px;align-items:baseline}
+.principle-label{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--band-muted);margin:0}
+.principle p{margin:0;font-size:clamp(19px,2vw,22px);line-height:1.55;color:var(--band-text)}
+.principle strong{color:#fff;font-weight:600}
+
+/* experience band */
+.band{background:var(--accent);color:var(--band-text);margin-top:clamp(80px,11vw,136px)}
+.band .wrap{padding-top:clamp(64px,9vw,104px);padding-bottom:clamp(64px,9vw,104px)}
+.band .kicker{color:var(--band-muted)}
+.band .head h2{color:#fff}
+.band .head p{color:var(--band-muted)}
+.role-card{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.6fr);gap:12px 56px;padding:0 0 40px}
+.role-card h3{font-family:var(--sans);font-weight:700;font-size:20px;line-height:1.3;margin:0;color:#fff}
+.role-card p{margin:0;font-size:17px;line-height:1.65;color:var(--band-text)}
+.ledger-title{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--band-muted);margin:0 0 4px}
+.row{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.6fr);gap:6px 56px;padding:20px 0;border-top:1px solid rgba(241,242,236,.28)}
+.row:last-child{border-bottom:1px solid rgba(241,242,236,.28)}
+.row h4{font-family:var(--sans);font-weight:700;font-size:17px;line-height:1.4;margin:0;color:#fff}
+.row p{margin:0;font-size:16.5px;line-height:1.6;color:var(--band-text)}
+
+/* casebook teaser */
+.teaser{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.9fr);gap:32px 56px;align-items:center;padding:clamp(32px,5vw,52px);border:1.5px dashed var(--dash);border-radius:10px}
+.teaser h2{font-family:var(--sans);font-weight:700;font-size:clamp(28px,3.6vw,40px);line-height:1.1;letter-spacing:-.02em;margin:0 0 14px}
+.teaser p{margin:0;font-size:17px;line-height:1.6;color:var(--soft);max-width:52ch}
+.teaser-side{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.teaser-side span{font-family:var(--sans);font-size:14px;color:var(--muted)}
+
+/* contact */
+.contact{background:var(--ink);color:var(--band-text);margin-top:clamp(80px,11vw,136px)}
+.contact .wrap{padding-top:clamp(64px,9vw,104px);padding-bottom:40px}
+.contact .kicker{color:var(--band-muted)}
+.contact h2{font-family:var(--sans);font-weight:700;font-size:clamp(28px,4vw,46px);line-height:1.08;letter-spacing:-.02em;margin:0 0 14px;color:#fff;max-width:18ch}
+.contact-lede{margin:0 0 40px;font-size:17px;color:var(--band-muted);max-width:50ch}
+.contact-rows{display:flex;flex-direction:column;gap:14px}
+.contact-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 20px}
+.contact-row span:first-child{flex:0 0 96px;font-family:var(--sans);font-size:15px;color:var(--band-muted)}
+.contact a{color:#fff}
+.todo{display:inline-block;background:var(--todo-bg);color:var(--todo-ink);padding:4px 10px;border-radius:4px;font-family:var(--sans);font-size:15px}
+.site-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;margin-top:72px;padding-top:24px;border-top:1px solid rgba(241,242,236,.2);font-family:var(--sans);font-size:13.5px;color:var(--band-muted)}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .caps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .case,.role-card,.row,.teaser{grid-template-columns:1fr}
+  .case-side{position:static}
+  .principle{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .caps,.steps{grid-template-columns:1fr}
+  .ai-strip{grid-template-columns:1fr}
+  .case-link{margin-left:0}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="wrap site-head">
+  <a class="brand" href="index.html">Poornima Ramanarayanan</a>
+  <nav class="site-nav" aria-label="Main">
+    <a href="#capabilities">Capabilities</a>
+    <a href="#work">Case studies</a>
+    <a href="#approach">Approach</a>
+    <a href="#experience">Experience</a>
+    <a href="casebook.html">Casebook</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<section class="wrap hero" aria-labelledby="hero-title">
+  <div>
+    <p class="role">Product Manager · B2B SaaS · Healthcare and medical imaging</p>
+    <h1 id="hero-title">I turn ambiguous problems into products that <em>work in the real world.</em></h1>
+    <p class="lede">I connect customer needs, business goals and technical realities so teams can make clear decisions and ship with confidence. My current work sits where products are hardest to get right: clinical workflows, hospital operations, regulated data and commercial scale.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#work">Explore my work ↓</a>
+      <a class="btn" href="casebook.html">Read the casebook →</a>
+    </div>
+  </div>
+  <aside class="hero-map" aria-label="How I work through a problem">
+    <p class="hero-map-label">How I work through a problem</p>
+    <div class="map compact">
+      <div class="node n-q"><div class="node-head"><span class="badge" aria-hidden="true">Q</span><span class="node-label">The problem</span></div><p>What’s really being asked, and why now?</p></div>
+      <div class="node n-found"><div class="node-head"><span class="badge" aria-hidden="true">+</span><span class="node-label">What I found</span></div><p>Evidence before solutions.</p></div>
+      <div class="node n-call"><div class="node-head"><span class="badge" aria-hidden="true">★</span><span class="node-label">How I approached it</span></div><p>A clear call, with a named owner.</p></div>
+      <div class="node n-open"><div class="node-head"><span class="badge" aria-hidden="true">?</span><span class="node-label">Still open</span></div><p>Named openly, not hidden.</p></div>
+    </div>
+    <p class="hero-map-foot">Every case on this site follows the same map.</p>
+  </aside>
+</section>
+
+<section class="wrap section" id="capabilities" aria-labelledby="caps-title">
+  <div class="head">
+    <div><p class="kicker">Core capabilities</p><h2 id="caps-title">The craft of product management.</h2></div>
+    <p>My work spans the full product lifecycle, from understanding which problems matter to aligning teams on what to build, why it matters and how we’ll know it worked. Each capability comes with what it looks like in practice.</p>
+  </div>
+  <div class="caps">
+    <article class="cap">
+      <span class="num">01</span>
+      <h3>Strategy and prioritisation</h3>
+      <p>Translate company direction into clear goals, strategic bets and roadmaps, and make trade-offs explicit so teams can move with confidence.</p>
+      <div class="practice"><span class="practice-label">In practice</span>
+        <p class="proof">Split a vendor evaluation into buy and build decisions, so three of five planned dashboards could move ahead without waiting on procurement.</p>
+        <p class="proof">Reconciled roadmap commitments with what actually shipped for a board update, surfacing work the roadmap had missed.</p>
+      </div>
+    </article>
+    <article class="cap">
+      <span class="num">02</span>
+      <h3>Customer and problem discovery</h3>
+      <p>Bring together customer conversations, frontline feedback and usage signals to find the real problem behind the request.</p>
+      <div class="practice"><span class="practice-label">In practice</span>
+        <p class="proof">Recognised that a CRM request was really a billing and reconciliation problem.</p>
+        <p class="proof">Turned expert clinical review sessions into a structured register of decisions and owned actions.</p>
+      </div>
+    </article>
+    <article class="cap">
+      <span class="num">03</span>
+      <h3>Product delivery</h3>
+      <p>Turn decisions into requirements teams can build against, including the edge cases and the moments where a workflow can break.</p>
+      <div class="practice"><span class="practice-label">In practice</span>
+        <p class="proof">Own requirements, workflow mapping and UAT for a platform live across 50+ hospital sites.</p>
+        <p class="proof">Write feature briefs as scenario, flow and where-it-can-break tables.</p>
+        <p class="proof">Wrote the PRD for a radiologist reporting module and took it through release, including launch messaging with Marketing and Customer Success.</p>
+      </div>
+    </article>
+    <article class="cap">
+      <span class="num">04</span>
+      <h3>Metrics and learning loops</h3>
+      <p>Define what success looks like, instrument it, and build feedback loops that shape the next decision.</p>
+      <div class="practice"><span class="practice-label">In practice</span>
+        <p class="proof">Set up structured defect tracking with engineering, tagged by failure type; the product failure rate fell 40% in two months.</p>
+        <p class="proof">Chose an analytics stack based on privacy-safe event design, not just features.</p>
+      </div>
+    </article>
+    <article class="cap">
+      <span class="num">05</span>
+      <h3>Stakeholder alignment</h3>
+      <p>Create shared understanding across engineering, ML, clinical, commercial, finance and leadership, especially when priorities conflict.</p>
+      <div class="practice"><span class="practice-label">In practice</span>
+        <p class="proof">Helped redesign expert review as asynchronous: the team proposes, the reviewer marks exceptions, and calls happen only when needed.</p>
+        <p class="proof">Facilitated cross-team decisions on a package data model, naming an owner for every open question.</p>
+      </div>
+    </article>
+    <article class="cap">
+      <span class="num">06</span>
+      <h3>Platform and systems thinking</h3>
+      <p>Understand how data models, configuration, integrations and operations shape the product experience at scale.</p>
+      <div class="practice"><span class="practice-label">In practice</span>
+        <p class="proof">Proposed an engagement layer so one customer can run several product versions side by side.</p>
+        <p class="proof">Drafted a product taxonomy where classification decides which review gates work must pass.</p>
+      </div>
+    </article>
+  </div>
+  <div class="ai-strip">
+    <h3>Building with AI</h3>
+    <p>When a process needs a tool that doesn’t exist yet, I build a small one with Claude: a dialogue-mapping tool for contested design decisions, a pipeline that turns customer meeting notes into a tagged log of product signals, and a classifier that sorted weeks of support escalations by failure type and owner.</p>
+  </div>
+</section>
+
+<section class="wrap section" id="work" aria-labelledby="work-title">
+  <div class="head">
+    <div><p class="kicker">Selected case studies</p><h2 id="work-title">From complexity to product clarity.</h2></div>
+    <p>Two problems I’ve worked on, each mapped the same way. Details are anonymised; no customer names or confidential figures are shown.</p>
+  </div>
+
+  <article class="case" id="case-automation">
+    <div class="case-side">
+      <span class="num">Case 01</span>
+      <h3>Knowing when not to automate</h3>
+      <div class="case-context">Clinical review workflow, neurosurgical planning</div>
+      <div class="chips"><span class="chip">Problem framing</span><span class="chip">AI judgment</span><span class="chip">Clinical trust</span><span class="chip">Validation design</span></div>
+    </div>
+    <div>
+      <div class="map">
+        <div class="node n-q"><div class="node-head"><span class="badge" aria-hidden="true">Q</span><span class="node-label">The problem</span></div>
+          <p>Specialist reviewers were spending a large share of every review working out which of roughly twenty imaging outputs mattered for a given patient’s lesion. The ask was simple: rank them automatically.</p></div>
+        <div class="node n-found"><div class="node-head"><span class="badge" aria-hidden="true">+</span><span class="node-label">What I found</span></div>
+          <p>“Relevant” was really two different questions. Which outputs sit near the lesion is a geometry problem, and it can be computed. Which ones matter for this surgery is clinical judgment, and it changes from surgeon to surgeon. A proximity ranking would also have surfaced the least trustworthy signal first, since known false positives cluster closest to the lesion, while pushing down structures that had shifted from their usual position, often the ones that matter most.</p></div>
+        <div class="node n-call"><div class="node-head"><span class="badge" aria-hidden="true">★</span><span class="node-label">How I approached it</span></div>
+          <p>Rather than automate the judgment, I scoped a deterministic spatial aid that shows clinicians the geometry clearly and leaves the relevance decision with them. The human stays in charge by design, not by disclaimer, and clinicians get the transparency they need to trust what they’re looking at. Before it reaches a live workflow, it runs silently against already-reviewed cases and is checked against what reviewers actually marked.</p></div>
+        <div class="node n-open"><div class="node-head"><span class="badge" aria-hidden="true">?</span><span class="node-label">Still open</span></div>
+          <p>Whether spatial lookup is really where review time goes, which still needs measuring; whether labels like “review first” could anchor less experienced reviewers; and whether the aid changes the product’s regulatory scope.</p></div>
+      </div>
+      <div class="case-link">
+        <!-- Needs Case_Study_Knowing_When_Not_To_Automate.pdf uploaded next to index.html (exact name, case-sensitive). -->
+        <a href="Case_Study_Knowing_When_Not_To_Automate.pdf" class="btn">Read the one-page case study (PDF)</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="case" id="case-governance">
+    <div class="case-side">
+      <span class="num">Case 02</span>
+      <h3>Making release governance legible</h3>
+      <div class="case-context">Platform configuration across sites, markets and modules</div>
+      <div class="chips"><span class="chip">Systems thinking</span><span class="chip">Data modelling</span><span class="chip">Governance</span></div>
+    </div>
+    <div>
+      <div class="map">
+        <div class="node n-q"><div class="node-head"><span class="badge" aria-hidden="true">Q</span><span class="node-label">The problem</span></div>
+          <p>One platform, many realities: different markets, regulatory states, modules and customer-specific configurations. Nobody could say with confidence exactly what each site was running, and single hospitals increasingly needed commercial, research and study work running side by side.</p></div>
+        <div class="node n-found"><div class="node-head"><span class="badge" aria-hidden="true">+</span><span class="node-label">What I found</span></div>
+          <p>Three internal source documents described three incompatible versioning models: one tied a version to the package a customer buys, another to their subscription. Commercial packaging and software versioning were being treated as the same thing, and runtime feature flags were doing the job that frozen, approved releases should do.</p></div>
+        <div class="node n-call"><div class="node-head"><span class="badge" aria-hidden="true">★</span><span class="node-label">How I approached it</span></div>
+          <p>Separate what’s sold from what runs. Packages describe entitlements; versions describe a pinned, reproducible set of software. One test decides whether a change needs a new version: does it alter what a clinician sees as a finding? I proposed an engagement layer between customer and version, so a single hospital can run several streams, each pinned per protocol, with routing that is deterministic at intake and fails closed whenever anything is ambiguous.</p></div>
+        <div class="node n-open"><div class="node-head"><span class="badge" aria-hidden="true">?</span><span class="node-label">Still open</span></div>
+          <p>Whether an urgent safety fix may override a contractual version pin, a policy call that sits with regulatory leadership. A per-run processing record also still needs to exist, so any result can be traced back to exactly what produced it.</p></div>
+      </div>
+    </div>
+  </article>
+
+  <p class="more"><a href="casebook.html">More case studies and problem statements in the casebook →</a></p>
+</section>
+
+<section class="wrap section" id="approach" aria-labelledby="approach-title">
+  <div class="head">
+    <div><p class="kicker">How I work</p><h2 id="approach-title">Structured, collaborative, outcome-oriented.</h2></div>
+    <p>I bring clarity to complexity without losing sight of the people using the product or the teams building it.</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <span class="num">01</span>
+      <h3>Start with the problem</h3>
+      <p>Understand the user, the workflow, the constraints and the evidence before jumping to a solution.</p>
+      <div class="practice">
+        <p class="proof">Separate symptoms from root causes</p>
+        <p class="proof">Make assumptions explicit</p>
+        <p class="proof">Look for the person who predicts adoption, often the operator rather than the champion</p>
+      </div>
+    </div>
+    <div class="step">
+      <span class="num">02</span>
+      <h3>Make trade-offs visible</h3>
+      <p>Use shared criteria to navigate competing needs, limited capacity, risk and uncertainty.</p>
+      <div class="practice">
+        <p class="proof">Clarify impact and urgency</p>
+        <p class="proof">Keep what was ordered, authorised and delivered as separate records</p>
+        <p class="proof">Document decisions and the reasoning behind them</p>
+      </div>
+    </div>
+    <div class="step">
+      <span class="num">03</span>
+      <h3>Create execution clarity</h3>
+      <p>Give teams enough context to make good decisions while keeping scope and outcomes clear.</p>
+      <div class="practice">
+        <p class="proof">Define requirements, edge cases and failure points</p>
+        <p class="proof">Give every open decision a named owner</p>
+        <p class="proof">Agree on acceptance and release criteria up front</p>
+      </div>
+    </div>
+    <div class="step">
+      <span class="num">04</span>
+      <h3>Close the learning loop</h3>
+      <p>Treat launch as the start of learning, not the end of the process.</p>
+      <div class="practice">
+        <p class="proof">Instrument before automating: capture why work gets redone</p>
+        <p class="proof">Learn from support cases and incidents</p>
+        <p class="proof">Feed evidence back into the roadmap</p>
+      </div>
+    </div>
+  </div>
+  <div class="principle">
+    <p class="principle-label">My guiding principle</p>
+    <p><strong>Build for the real problem, not just the loudest request.</strong> Good product decisions account for user value, business viability, technical feasibility, and the operational reality it takes to deliver reliably.</p>
+  </div>
+</section>
+
+<section class="band" id="experience" aria-labelledby="exp-title">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="kicker">Experience</p><h2 id="exp-title">Core PM skills, applied in a demanding domain.</h2></div>
+      <p>My product foundation transfers across domains. My current role adds depth in complex workflows, high-trust users and regulated, multidisciplinary products.</p>
+    </div>
+    <div class="role-card">
+      <h3>Associate Product Manager, BrainSight AI<br><span style="font-weight:500;font-size:15px;color:var(--band-muted)">Mar 2024 – present</span></h3>
+      <p>I work on VoxelBox, a cloud platform that turns MRI scans into pre-surgical brain maps for neurosurgeons and radiologists, live across 50+ hospital sites in India. I own requirements, workflow mapping and UAT, and work daily with clinical, engineering, ML, commercial, finance and regulatory teams.</p>
+    </div>
+    <div class="role-card">
+      <h3>Before product</h3>
+      <p>Healthcare operations: remote patient monitoring protocols at Sleepiz, patient coaching at ResMed, and US insurance claims resolution at Cerner. M.E. in Biotechnology from BITS Hyderabad and B.Tech. from VIT Vellore.</p>
+    </div>
+    <p class="ledger-title">Where I’ve gone deep</p>
+    <div>
+      <div class="row"><h4>Regulated software delivery</h4><p>Working within medical-device software standards (IEC 62304, IEC 62366): design controls, verification and validation planning, and use-related risk analysis structured around real clinical workflows.</p></div>
+      <div class="row"><h4>Release and configuration governance</h4><p>Versioning models where any change to a clinical output ships as a new, frozen release rather than a runtime flag, with pins set per customer and protocol.</p></div>
+      <div class="row"><h4>Imaging data and interoperability</h4><p>DICOM and PACS integration across multi-site hospital groups, including routing data to the right customer and de-identifying it at the hospital edge.</p></div>
+      <div class="row"><h4>Clinical quality and trust</h4><p>Expert review workflows, structured case sheets, and product choices that help clinicians understand what an output represents and how far to trust it.</p></div>
+      <div class="row"><h4>Privacy by design</h4><p>Keeping patient identifiers out of third-party tools, from tokenised billing to analytics event design, within India’s data-residency rules.</p></div>
+      <div class="row"><h4>Clinical go-to-market</h4><p>Capability-led positioning for neurosurgeons, sales enablement assets, and a clear rule against accuracy or outcome claims in external copy.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section" aria-labelledby="casebook-title">
+  <div class="teaser">
+    <div>
+      <p class="kicker">Casebook</p>
+      <h2 id="casebook-title">A growing record of problems and how I approached them.</h2>
+      <p>Beyond the two case studies above, the casebook collects shorter problem statements, decisions and teardowns. I add to it as I go.</p>
+    </div>
+    <div class="teaser-side">
+      <a class="btn btn-primary" href="casebook.html">Open the casebook →</a>
+      <span>Case studies, problem statements and teardowns</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <p class="kicker">Let’s connect</p>
+    <h2 id="contact-title">Let’s talk about the problems you’re solving.</h2>
+    <p class="contact-lede">Open to conversations about product, platforms and meaningful customer problems.</p>
+    <div class="contact-rows">
+      <div class="contact-row"><span>Email</span>
+        <a href="mailto:poornima.ramanarayanan@gmail.com">poornima.ramanarayanan@gmail.com</a>
+      </div>
+      <div class="contact-row"><span>LinkedIn</span>
+        <a href="https://www.linkedin.com/in/poornima0708/">linkedin.com/in/poornima0708</a>
+      </div>
+      <div class="contact-row"><span>Résumé</span>
+        <a href="poornima-ramanarayanan-resume.pdf">Download résumé (PDF)</a>
+      </div>
+    </div>
+    <div class="site-foot">
+      <span>© 2026 Poornima Ramanarayanan</span>
+      <span>Case details are anonymised. No customer, patient or confidential figures are shown.</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
