@@ -8,7 +8,14 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Casebook — Poornima Ramanarayanan">
 <meta property="og:description" content="Problems I’ve worked on, and how I approached them.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23274E13'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='36' font-weight='700' text-anchor='middle' fill='%23F1F2EC'%3EP%3C/text%3E%3C/svg%3E">
+<!-- LINK PREVIEW: replace poornima-prod below with your GitHub username (it appears twice here). -->
+<meta property="og:url" content="https://poornima-prod.github.io/casebook.html">
+<meta property="og:image" content="https://poornima-prod.github.io/social-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Poornima Ramanarayanan, Product Manager: I turn ambiguous problems into products that work in the real world.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23232A27'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='36' font-weight='700' text-anchor='middle' fill='%23A9C9B2'%3EP%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
@@ -22,9 +29,12 @@
 -->
 <style>
 :root{
-  --ground:#F1F2EC; --surface:#E6E9DF; --field:#FAFBF7; --ink:#1B2316; --soft:#3E4739; --muted:#525C4C;
-  --rule:#C9CFBF; --dash:#A3AD97; --accent:#274E13; --accent-deep:#1C3A0D; --teal:#1D6B66;
-  --badge-bg:#F1F2EC;
+  --ground:#F1F1EC; --surface:#E3E5DE; --field:#FAFAF7; --ink:#1D2321; --soft:#3C4440; --muted:#59615D;
+  --rule:#CDD1C9; --dash:#9EA79F; --accent:#3D5E49; --accent-deep:#2C4636; --teal:#4E7377;
+  --band:#232A27; --band-text:#ECEEE9; --band-muted:#AFC0B4; --hi:#A9C9B2; --on-accent:#DCE6DE;
+  --todo-bg:#F6E6C3; --todo-ink:#6E4400;
+  --badge-bg:#F1F1EC;
+  /* Palette: Graphite & Sage. Sage is the accent: keep it to small areas. On dark backgrounds use --hi. */
   --sans:'Schibsted Grotesk','Helvetica Neue',Arial,sans-serif;
   --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
   --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
@@ -113,7 +123,7 @@ details[open] .toggle::before{content:"−"}
 .hint{font-family:var(--sans);font-size:13px;line-height:1.4;color:var(--muted)}
 .field input,.field select,.field textarea{width:100%;font:inherit;font-family:var(--sans);font-size:15.5px;color:var(--ink);background:var(--field);border:1.5px solid var(--rule);border-radius:6px;padding:10px 12px}
 .field textarea{font-family:var(--serif);font-size:16.5px;line-height:1.55;min-height:110px;resize:vertical}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px rgba(39,78,19,.15)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px rgba(61,94,73,.18)}
 .two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}
 .check{display:flex;align-items:center;gap:10px;font-family:var(--sans);font-size:15px}
 .check input{width:20px;height:20px;accent-color:var(--accent)}

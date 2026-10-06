@@ -8,7 +8,14 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Poornima Ramanarayanan — Product Manager">
 <meta property="og:description" content="I turn ambiguous problems into products that work in the real world.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23274E13'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='36' font-weight='700' text-anchor='middle' fill='%23F1F2EC'%3EP%3C/text%3E%3C/svg%3E">
+<!-- LINK PREVIEW: replace poornima-prod below with your GitHub username (it appears twice here). -->
+<meta property="og:url" content="https://poornima-prod.github.io/">
+<meta property="og:image" content="https://poornima-prod.github.io/social-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Poornima Ramanarayanan, Product Manager: I turn ambiguous problems into products that work in the real world.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23232A27'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='36' font-weight='700' text-anchor='middle' fill='%23A9C9B2'%3EP%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
@@ -20,10 +27,12 @@
 -->
 <style>
 :root{
-  --ground:#F1F2EC; --surface:#E6E9DF; --ink:#1B2316; --soft:#3E4739; --muted:#525C4C;
-  --rule:#C9CFBF; --dash:#A3AD97; --accent:#274E13; --accent-deep:#1C3A0D; --teal:#1D6B66;
-  --band-text:#F1F2EC; --band-muted:#D2DDC8; --todo-bg:#F6E6C3; --todo-ink:#6E4400;
-  --badge-bg:#F1F2EC;
+  --ground:#F1F1EC; --surface:#E3E5DE; --field:#FAFAF7; --ink:#1D2321; --soft:#3C4440; --muted:#59615D;
+  --rule:#CDD1C9; --dash:#9EA79F; --accent:#3D5E49; --accent-deep:#2C4636; --teal:#4E7377;
+  --band:#232A27; --band-text:#ECEEE9; --band-muted:#AFC0B4; --hi:#A9C9B2; --on-accent:#DCE6DE;
+  --todo-bg:#F6E6C3; --todo-ink:#6E4400;
+  --badge-bg:#F1F1EC;
+  /* Palette: Graphite & Sage. Sage is the accent: keep it to small areas. On dark backgrounds use --hi. */
   --sans:'Schibsted Grotesk','Helvetica Neue',Arial,sans-serif;
   --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
 }
@@ -115,22 +124,22 @@ h1 em{font-style:normal;color:var(--accent)}
 .step > p{margin:0;font-size:16.5px;line-height:1.55}
 .step .practice{margin-top:4px}
 .principle{margin-top:64px;background:var(--accent);color:#fff;border-radius:10px;padding:clamp(28px,4vw,44px);display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);gap:14px 40px;align-items:baseline}
-.principle-label{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--band-muted);margin:0}
+.principle-label{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--on-accent);margin:0}
 .principle p{margin:0;font-size:clamp(19px,2vw,22px);line-height:1.55;color:var(--band-text)}
 .principle strong{color:#fff;font-weight:600}
 
 /* experience band */
-.band{background:var(--accent);color:var(--band-text);margin-top:clamp(80px,11vw,136px)}
+.band{background:var(--band);color:var(--band-text);margin-top:clamp(80px,11vw,136px)}
 .band .wrap{padding-top:clamp(64px,9vw,104px);padding-bottom:clamp(64px,9vw,104px)}
-.band .kicker{color:var(--band-muted)}
+.band .kicker{color:var(--hi)}
 .band .head h2{color:#fff}
 .band .head p{color:var(--band-muted)}
 .role-card{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.6fr);gap:12px 56px;padding:0 0 40px}
 .role-card h3{font-family:var(--sans);font-weight:700;font-size:20px;line-height:1.3;margin:0;color:#fff}
 .role-card p{margin:0;font-size:17px;line-height:1.65;color:var(--band-text)}
 .ledger-title{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--band-muted);margin:0 0 4px}
-.row{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.6fr);gap:6px 56px;padding:20px 0;border-top:1px solid rgba(241,242,236,.28)}
-.row:last-child{border-bottom:1px solid rgba(241,242,236,.28)}
+.row{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.6fr);gap:6px 56px;padding:20px 0;border-top:1px solid rgba(236,238,233,.18)}
+.row:last-child{border-bottom:1px solid rgba(236,238,233,.18)}
 .row h4{font-family:var(--sans);font-weight:700;font-size:17px;line-height:1.4;margin:0;color:#fff}
 .row p{margin:0;font-size:16.5px;line-height:1.6;color:var(--band-text)}
 
@@ -142,9 +151,9 @@ h1 em{font-style:normal;color:var(--accent)}
 .teaser-side span{font-family:var(--sans);font-size:14px;color:var(--muted)}
 
 /* contact */
-.contact{background:var(--ink);color:var(--band-text);margin-top:clamp(80px,11vw,136px)}
+.contact{background:var(--band);color:var(--band-text);margin-top:clamp(80px,11vw,136px)}
 .contact .wrap{padding-top:clamp(64px,9vw,104px);padding-bottom:40px}
-.contact .kicker{color:var(--band-muted)}
+.contact .kicker{color:var(--hi)}
 .contact h2{font-family:var(--sans);font-weight:700;font-size:clamp(28px,4vw,46px);line-height:1.08;letter-spacing:-.02em;margin:0 0 14px;color:#fff;max-width:18ch}
 .contact-lede{margin:0 0 40px;font-size:17px;color:var(--band-muted);max-width:50ch}
 .contact-rows{display:flex;flex-direction:column;gap:14px}
@@ -152,7 +161,7 @@ h1 em{font-style:normal;color:var(--accent)}
 .contact-row span:first-child{flex:0 0 96px;font-family:var(--sans);font-size:15px;color:var(--band-muted)}
 .contact a{color:#fff}
 .todo{display:inline-block;background:var(--todo-bg);color:var(--todo-ink);padding:4px 10px;border-radius:4px;font-family:var(--sans);font-size:15px}
-.site-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;margin-top:72px;padding-top:24px;border-top:1px solid rgba(241,242,236,.2);font-family:var(--sans);font-size:13.5px;color:var(--band-muted)}
+.site-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;margin-top:72px;padding-top:24px;border-top:1px solid rgba(236,238,233,.16);font-family:var(--sans);font-size:13.5px;color:var(--band-muted)}
 
 @media (max-width:900px){
   .hero{grid-template-columns:1fr}
